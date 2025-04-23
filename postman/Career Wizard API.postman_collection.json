@@ -1,0 +1,172 @@
+{
+  "info": {
+    "name": "Career Wizard API",
+    "description": "API for the Career Wizard system",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "Login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "var jsonData = pm.response.json();",
+                  "pm.environment.set('access_token', jsonData.accessToken);",
+                  "pm.environment.set('refresh_token', jsonData.refreshToken);",
+                  "pm.environment.set('token_expires_at', new Date(Date.now() + jsonData.expiresIn * 1000).toISOString());"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/authentication/login",
+              "host": ["{{base_url}}"],
+              "path": ["authentication", "login"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"user@example.com\",\n    \"password\": \"password123\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Refresh Token",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "var jsonData = pm.response.json();",
+                  "pm.environment.set('access_token', jsonData.accessToken);",
+                  "pm.environment.set('refresh_token', jsonData.refreshToken);",
+                  "pm.environment.set('token_expires_at', new Date(Date.now() + jsonData.expiresIn * 1000).toISOString());"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/authentication/refresh",
+              "host": ["{{base_url}}"],
+              "path": ["authentication", "refresh"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"refreshToken\": \"{{refresh_token}}\"\n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Create User",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/users",
+              "host": ["{{base_url}}"],
+              "path": ["users"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"firstName\": \"John\",\n    \"lastName\": \"Doe\",\n    \"email\": \"john.doe@example.com\",\n    \"password\": \"password123\",\n    \"acceptedTerms\": true\n}"
+            }
+          }
+        },
+        {
+          "name": "Get User",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  "function checkAndRefreshToken() {",
+                  "    var tokenExpiresAt = new Date(pm.environment.get('token_expires_at'));",
+                  "    var now = new Date();",
+                  "    if (tokenExpiresAt <= now) {",
+                  "        pm.sendRequest({",
+                  "            url: pm.environment.get('base_url') + '/auth/refresh',",
+                  "            method: 'POST',",
+                  "            header: {",
+                  "                'Content-Type': 'application/json'",
+                  "            },",
+                  "            body: {",
+                  "                mode: 'raw',",
+                  "                raw: JSON.stringify({",
+                  "                    refreshToken: pm.environment.get('refresh_token')",
+                  "                })",
+                  "            }",
+                  "        }, function (err, res) {",
+                  "            if (err) {",
+                  "                console.error('Error refreshing token:', err);",
+                  "                return;",
+                  "            }",
+                  "            var jsonData = res.json();",
+                  "            pm.environment.set('access_token', jsonData.accessToken);",
+                  "            pm.environment.set('refresh_token', jsonData.refreshToken);",
+                  "            pm.environment.set('token_expires_at', new Date(Date.now() + jsonData.expiresIn * 1000).toISOString());",
+                  "        });",
+                  "    }",
+                  "}",
+                  "checkAndRefreshToken();"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/users/me",
+              "host": ["{{base_url}}"],
+              "path": ["users", "me"]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3000"
+    }
+  ]
+}
