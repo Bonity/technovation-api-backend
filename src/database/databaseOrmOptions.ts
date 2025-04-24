@@ -5,6 +5,7 @@ import { config } from 'dotenv';
 import { DataSource, DataSourceOptions } from 'typeorm';
 import { EnvironmentVariables } from '../constants/enviromentVariables';
 import { UserAuthentication } from '../modules/authentication/entities/userAuthentication.entity';
+import { Questionnaire } from '../modules/questionnaire/questionnaire.entity';
 
 // Load environment variables based on NODE_ENV
 const envFile = `.env${process.env.NODE_ENV ? `.${process.env.NODE_ENV}` : ''}`;
@@ -17,7 +18,7 @@ export const databaseOrmOptions: TypeOrmModuleOptions | DataSourceOptions = {
   username: process.env[EnvironmentVariables.DATABASE_USERNAME] || 'postgres',
   password: process.env[EnvironmentVariables.DATABASE_PASSWORD] || '',
   database: process.env[EnvironmentVariables.DATABASE_NAME] || 'technovation',
-  entities: [User, UserAuthentication],
+  entities: [User, UserAuthentication, Questionnaire],
   migrations: [join(__dirname, './migrations/*{.ts,.js}')],
   synchronize: false,
   migrationsRun: false,

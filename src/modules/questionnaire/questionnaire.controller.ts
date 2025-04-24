@@ -24,5 +24,11 @@ export class QuestionnaireController {
   @Get(':id')
   async findOne(@Request() req, id: number) {
     return this.questionnaireService.findOne(id, req.user);
+
+  }
+
+  @Get('hasAnswered')
+  async hasAnswered():Promise<boolean>{
+    return true
   }
 } 

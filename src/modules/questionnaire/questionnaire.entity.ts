@@ -1,5 +1,5 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, CreateDateColumn } from 'typeorm';
-import { User } from '../user/user.entity';
+import { Entity, PrimaryGeneratedColumn, Column, OneToOne, CreateDateColumn } from 'typeorm';
+import { User } from '../users/entities/user.entity';
 
 @Entity('questionnaires')
 export class Questionnaire {
@@ -9,7 +9,7 @@ export class Questionnaire {
   @Column('jsonb')
   answers: Record<number, string>;
 
-  @ManyToOne(() => User, user => user.questionnaires)
+  @OneToOne(() => User, user => user.questionnaire)
   user: User;
 
   @CreateDateColumn()

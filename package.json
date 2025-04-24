@@ -21,7 +21,7 @@
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "typeorm": "typeorm-ts-node-commonjs",
     
-    "migration:local:generate": "cross-env NODE_ENV=local npm run typeorm src/database/migrations/MY-MIGRATION-NAME -- migration:generate -d src/database/databaseOrmOptions.ts",
+    "migration:local:generate": "cross-env NODE_ENV=local npm run typeorm -- migration:generate src/database/migrations/added-questionnaire -d src/database/databaseOrmOptions.ts",
     "migration:local:run": "cross-env NODE_ENV=local npm run typeorm -- migration:run -d src/database/databaseOrmOptions.ts",
     "migration:local:revert": "cross-env NODE_ENV=local npm run typeorm -- migration:revert -d src/database/databaseOrmOptions.ts",
     

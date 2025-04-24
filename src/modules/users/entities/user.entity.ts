@@ -2,12 +2,14 @@ import { UserAuthentication } from '../../../modules/authentication/entities/use
 import {
   Column,
   OneToMany,
+  OneToOne,
   CreateDateColumn,
   DeleteDateColumn,
   UpdateDateColumn,
 } from 'typeorm';
 import { PrimaryGeneratedColumn } from 'typeorm';
 import { Entity } from 'typeorm';
+import { Questionnaire } from '../../questionnaire/questionnaire.entity';
 
 @Entity('users')
 export class User {
@@ -43,4 +45,7 @@ export class User {
     (userAuthentication) => userAuthentication.user,
   )
   user_authentications: UserAuthentication[];
+
+  @OneToOne(() => Questionnaire, questionnaire => questionnaire.user)
+  questionnaire: Questionnaire;
 }
