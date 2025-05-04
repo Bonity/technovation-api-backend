@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Questionnaire } from './questionnaire.entity';
-import { User } from '../user/user.entity';
+import { User } from '../users/entities/user.entity';
 
 @Injectable()
 export class QuestionnaireService {
@@ -12,6 +12,9 @@ export class QuestionnaireService {
   ) {}
 
   async create(user: User, answers: Record<number, string>): Promise<Questionnaire> {
+    // Delete any existing questionnaire for this user
+    await this.questionnaireRepository.delete({ user });
+    
     const questionnaire = this.questionnaireRepository.create({
       user,
       answers,
@@ -26,9 +29,9 @@ export class QuestionnaireService {
     });
   }
 
-  async findOne(id: number, user: User): Promise<Questionnaire | null> {
+  async findOne(id: number): Promise<Questionnaire | null> {
     return this.questionnaireRepository.findOne({
-      where: { id, user },
+      where: { id },
     });
   }
 } 

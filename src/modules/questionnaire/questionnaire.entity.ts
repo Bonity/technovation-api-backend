@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToOne, CreateDateColumn } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, OneToOne, CreateDateColumn, JoinColumn } from 'typeorm';
 import { User } from '../users/entities/user.entity';
 
 @Entity('questionnaires')
@@ -10,6 +10,7 @@ export class Questionnaire {
   answers: Record<number, string>;
 
   @OneToOne(() => User, user => user.questionnaire)
+  @JoinColumn({ name: 'user_id' })
   user: User;
 
   @CreateDateColumn()

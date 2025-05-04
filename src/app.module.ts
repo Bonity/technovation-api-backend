@@ -6,13 +6,15 @@ import { ConfigurationModule } from './config/configuration.module';
 import { UsersModule } from './modules/users/users.module';
 import { AuthenticationModule } from './modules/authentication/authentication.module';
 import { QuestionnaireModule } from './modules/questionnaire/questionnaire.module';
+import { AiModule } from './modules/ai/ai.module';
 @Module({
   imports: [
     ConfigurationModule,
     DatabaseModule,
     UsersModule,
     AuthenticationModule,
-    QuestionnaireModule
+    QuestionnaireModule,
+    AiModule
   ],
   controllers: [AppController],
   providers: [AppService],

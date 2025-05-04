@@ -1,7 +1,7 @@
 import { Controller, Get, Post, Body, UseGuards, Request } from '@nestjs/common';
 import { QuestionnaireService } from './questionnaire.service';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
-import { User } from '../user/user.entity';
+import { User } from '../users/entities/user.entity';
 
 @Controller('questionnaires')
 @UseGuards(JwtAuthGuard)
@@ -23,7 +23,7 @@ export class QuestionnaireController {
 
   @Get(':id')
   async findOne(@Request() req, id: number) {
-    return this.questionnaireService.findOne(id, req.user);
+    return this.questionnaireService.findOne(id);
 
   }
 

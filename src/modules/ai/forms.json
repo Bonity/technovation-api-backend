@@ -1,0 +1,362 @@
+[
+    {
+        "id": 1,
+        "question": "Do you separate recyclable waste at home?",
+        "options": [
+            {
+                "id": "A",
+                "texto": "I separate waste into distinct categories, such as plastic, paper, metal, glass, and organic."
+            },
+            {
+                "id": "B",
+                "texto": "I only separate between recyclable waste from non recyclable waste."
+            },
+            {
+                "id": "C",
+                "texto": "I don't do any separation, everything goes to the same bin."
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "question": "How many times per week do you use public transportation, bicycle, or walk?",
+        "options": [
+            {
+                "id": "A",
+                "texto": "5 times or more per week."
+            },
+            {
+                "id": "B",
+                "texto": "3 to 4 times per week."
+            },
+            {
+                "id": "C",
+                "texto": "Never or rarely."
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "question": "Do you bring reusable bags when shopping?",
+        "options": [
+            {
+                "id": "A",
+                "texto": "I always bring them."
+            },
+            {
+                "id": "B",
+                "texto": "I sometimes bring them."
+            },
+            {
+                "id": "C",
+                "texto": "I never bring them."
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "question": "Do you consume organic food or from local producers?",
+        "options": [
+            {
+                "id": "A",
+                "texto": "Frequently."
+            },
+            {
+                "id": "B",
+                "texto": "Sometimes."
+            },
+            {
+                "id": "C",
+                "texto": "Never."
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "question": "Do you reuse containers, bottles, or other packaging at home?",
+        "options": [
+            {
+                "id": "A",
+                "texto": "I always reuse them."
+            },
+            {
+                "id": "B",
+                "texto": "I sometimes reuse them."
+            },
+            {
+                "id": "C",
+                "texto": "I never reuse them."
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "question": "How often do you consume red meat?",
+        "options": [
+            {
+                "id": "A",
+                "texto": "Rarely or never."
+            },
+            {
+                "id": "B",
+                "texto": "A few times per week."
+            },
+            {
+                "id": "C",
+                "texto": "Every day."
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "question": "Do you unplug electronic devices when not in use?",
+        "options": [
+            {
+                "id": "A",
+                "texto": "Yes, I always unplug them."
+            },
+            {
+                "id": "B",
+                "texto": "I sometimes leave them on standby."
+            },
+            {
+                "id": "C",
+                "texto": "No, I leave them plugged in all the time."
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "question": "Do you collect rainwater or reuse water for other purposes?",
+        "options": [
+            {
+                "id": "A",
+                "texto": "Yes, whenever possible."
+            },
+            {
+                "id": "B",
+                "texto": "Sometimes."
+            },
+            {
+                "id": "C",
+                "texto": "I don't."
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "question": "Do you use biodegradable or natural cleaning products?",
+        "options": [
+            {
+                "id": "A",
+                "texto": "I always use them."
+            },
+            {
+                "id": "B",
+                "texto": "I sometimes use them."
+            },
+            {
+                "id": "C",
+                "texto": "I never use them."
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "question": "Do you check energy consumption when buying appliances?",
+        "options": [
+            {
+                "id": "A",
+                "texto": "Yes, I always check."
+            },
+            {
+                "id": "B",
+                "texto": "I sometimes check."
+            },
+            {
+                "id": "C",
+                "texto": "I don't consider this."
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "question": "How environmentally conscious do you consider yourself regarding the impact of your actions?",
+        "options": [
+            {
+                "id": "A",
+                "texto": "Very conscious."
+            },
+            {
+                "id": "B",
+                "texto": "Moderately conscious."
+            },
+            {
+                "id": "C",
+                "texto": "Not very conscious."
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "question": "Do you consider sustainability when making purchases?",
+        "options": [
+            {
+                "id": "A",
+                "texto": "Yes, I always consider it."
+            },
+            {
+                "id": "B",
+                "texto": "I sometimes consider it."
+            },
+            {
+                "id": "C",
+                "texto": "I don't consider it."
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "question": "Do you believe your individual actions can positively impact the environment?",
+        "options": [
+            {
+                "id": "A",
+                "texto": "Yes, I believe they make a difference."
+            },
+            {
+                "id": "B",
+                "texto": "Maybe, in some cases."
+            },
+            {
+                "id": "C",
+                "texto": "No, I don't think they make a difference."
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "question": "Do you usually seek information about sustainable practices?",
+        "options": [
+            {
+                "id": "A",
+                "texto": "Yes, frequently."
+            },
+            {
+                "id": "B",
+                "texto": "Sometimes."
+            },
+            {
+                "id": "C",
+                "texto": "I don't seek information."
+            }
+        ]
+    },
+    {
+        "id": 15,
+        "question": "Do you participate in any collective initiatives (like community gardens, NGOs, etc.)?",
+        "options": [
+            {
+                "id": "A",
+                "texto": "Yes, I actively participate."
+            },
+            {
+                "id": "B",
+                "texto": "I sometimes participate."
+            },
+            {
+                "id": "C",
+                "texto": "I don't participate."
+            }
+        ]
+    },
+    {
+        "id": 16,
+        "question": "Do you talk to others about sustainability?",
+        "options": [
+            {
+                "id": "A",
+                "texto": "Yes, frequently."
+            },
+            {
+                "id": "B",
+                "texto": "Sometimes."
+            },
+            {
+                "id": "C",
+                "texto": "I don't talk about it."
+            }
+        ]
+    },
+    {
+        "id": 17,
+        "question": "Do you feel you could do more to contribute to the environment?",
+        "options": [
+            {
+                "id": "A",
+                "texto": "Yes, definitely."
+            },
+            {
+                "id": "B",
+                "texto": "It depends on the situation."
+            },
+            {
+                "id": "C",
+                "texto": "No, I already do enough."
+            }
+        ]
+    },
+    {
+        "id": 18,
+        "question": "Do you find it easy to maintain sustainable habits?",
+        "options": [
+            {
+                "id": "A",
+                "texto": "Yes, it's easy."
+            },
+            {
+                "id": "B",
+                "texto": "More or less, it depends."
+            },
+            {
+                "id": "C",
+                "texto": "No, it's difficult."
+            }
+        ]
+    },
+    {
+        "id": 19,
+        "question": "Do you consider sustainability an important value?",
+        "options": [
+            {
+                "id": "A",
+                "texto": "Yes, it's fundamental."
+            },
+            {
+                "id": "B",
+                "texto": "Maybe, in certain contexts."
+            },
+            {
+                "id": "C",
+                "texto": "No, I don't see it as important."
+            }
+        ]
+    },
+    {
+        "id": 20,
+        "question": "Would you be willing to change some habits if you knew it helps the environment?",
+        "options": [
+            {
+                "id": "A",
+                "texto": "Yes, I would definitely change."
+            },
+            {
+                "id": "B",
+                "texto": "Maybe, depending on the habit."
+            },
+            {
+                "id": "C",
+                "texto": "No, I would hardly change."
+            }
+        ]
+    }
+]
