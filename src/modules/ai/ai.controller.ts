@@ -14,7 +14,7 @@ export class AiController {
 
   @Post("generate-chat-message")
   async generateChatMessage(@Body() body: { messages: Message[] }) {
-    const systemPrompt = "You are a helpful sustainability assistant that can answer questions regarding environmental issues and help with tasks. Talk like a pirate.";
+    const systemPrompt = "You are a helpful sustainability assistant that can answer questions regarding environmental issues and help with sustainability relatedtasks. Use emojis to make the answer more engaging. Write in plain text without using any tool calls or markdown formatting.";
     const answer = await this.aiService.generateChatMessage(body.messages, systemPrompt); 
     return {
       answer: answer
