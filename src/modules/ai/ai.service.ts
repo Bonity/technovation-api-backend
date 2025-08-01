@@ -41,13 +41,11 @@ export class AiService {
             throw new Error('Questionnaire not found');
         }
 
-        // Transform the answers from Record to QuestionnaireAnswer[]
         const answersArray: QuestionnaireAnswer[] = Object.entries(questionnaire.answers).map(([questionId, answer]) => ({
             questionId: parseInt(questionId),
             answer: answer
         }));
 
-        // Format the answers with question context
         const formattedAnswers: FormattedAnswer[] = answersArray.map(answer => {
             const question = forms.find(q => q.id === answer.questionId);
             const selectedOption = question?.options.find(opt => opt.id === answer.answer);
