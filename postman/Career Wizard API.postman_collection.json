@@ -1,7 +1,7 @@
 {
   "info": {
-    "name": "Career Wizard API",
-    "description": "API for the Career Wizard system",
+    "name": "OSDA API",
+    "description": "API for the OSDA system",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "item": [

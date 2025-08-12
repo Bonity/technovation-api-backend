@@ -3,7 +3,7 @@ version: '3.8'
 services:
   postgres:
     image: postgres:latest
-    container_name: career-wizard-db
+    container_name: osda-db
     env_file:
       - .env.local
     environment:
